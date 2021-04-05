@@ -93,17 +93,16 @@ npm i -g conventional-changelog-cli
 ```
 使用命令
 ```js
-// 增量新增，自从上次发布以来的变动
-conventional-changelog -p angular -i CHANGELOG.md -w
-// 全量重新生成
-conventional-changelog -p angular -i CHANGELOG.md -w -r 0
+conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+
+//最后一个数据 0 是生成所有版本的日志，会先删除在仅增  1是生成当前版本的日志是增量，每次运行一次，在后边新增一次记录
 
 ```
 为方便使用可以将其放入package.json的scripts字
 ```js
   "scripts": {
     ...
-    "changeLog": "conventional-changelog -p angular -i CHANGELOG.md -w",
+    "changeLog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
   },
 ```
 

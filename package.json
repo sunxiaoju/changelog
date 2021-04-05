@@ -4,7 +4,7 @@
   "description": "change log",
   "main": "index.js",
   "scripts": {
-    "changeLog": "conventional-changelog -p angular -i CHANGELOG.md -w",
+    "changeLog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,12 +18,19 @@
   },
   "homepage": "https://github.com/sunxiaoju/changelog#readme",
   "devDependencies": {
+    "commitlint": "^12.1.1",
     "conventional-changelog-cli": "^2.1.1",
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^6.0.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
