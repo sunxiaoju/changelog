@@ -65,7 +65,7 @@ Closes #234 #345
 
 ## 安装
 ### 一般为了规范格式使用 Commitizen 插件配合
-全局安装： 
+全局安装： (Mac记得在前加sudo )
 ```js
 npm install -g commitizen 
 ```
@@ -73,5 +73,37 @@ npm install -g commitizen
 ```js
 commitizen init cz-conventional-changelog --save --save-exact
 ```
-然后在使用git commit 的时候改为 git cz即可
+安装后在package.json中会添加一行这样的问题
+```js
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+```
+然后在使用git commit 的时候改为 git cz然后就是提示格式信息
+
+<!image src="git-cz.png">
+
+
+## 生成Change log
+安装
+```js
+npm i -g conventional-changelog-cli
+```
+使用命令
+```js
+// 增量新增，自从上次发布以来的变动
+conventional-changelog -p angular -i CHANGELOG.md -w
+// 全量重新生成
+conventional-changelog -p angular -i CHANGELOG.md -w -r 0
+
+```
+为方便使用可以将其放入package.json的scripts字
+```js
+  "scripts": {
+    ...
+    "changeLog": "conventional-changelog -p angular -i CHANGELOG.md -w",
+  },
+```
 
