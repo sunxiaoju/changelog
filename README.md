@@ -10,6 +10,8 @@
 1. Change Log 是发布新版本时，用来说明与上一个版本差异的文档，
 2. changlog的自动生成需要依赖固定的格式 commit 提交格式,
 
+Change log生成日志：
+![log](/log.png)
 ## Commit  message 格式
 每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。
 
@@ -106,3 +108,4 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   },
 ```
 
+注： 如果习惯用git commit 提交代码的话，可以使用commitlint 对commit提交信息记性校验
