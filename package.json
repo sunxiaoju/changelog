@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/sunxiaoju/changelog#readme",
   "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
     "commitlint": "^12.1.1",
     "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
@@ -30,7 +32,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E $HUSKY_GIT_PARAMS"
     }
   }
 }
