@@ -83,7 +83,7 @@ commitizen init cz-conventional-changelog --save --save-exact
 ```
 然后在使用git commit 的时候改为 git cz然后就是提示格式信息
 
-<!image src="git-cz.png">
+![gt-cz](/git-cz.png)
 
 
 ## 生成Change log
