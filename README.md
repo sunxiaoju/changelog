@@ -108,4 +108,4 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   },
 ```
 
-注： 如果习惯用git commit 提交代码的话，可以使用commitlint 对commit提交信息记性校验
+如果习惯用git commit 提交代码的话，可以使用commitlint 对commit提交信息有效性进行校验
