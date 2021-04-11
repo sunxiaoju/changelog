@@ -89,7 +89,6 @@ npm i -g conventional-changelog-cli
 使用命令
 ```js
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
-
 //最后一个数据 0 是生成所有版本的日志，会先删除在仅增  1是生成当前版本的日志是增量，每次运行一次，在后边新增一次记录
 
 ```
