@@ -101,4 +101,43 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   },
 ```
 
+## commitlint 使用
 如果习惯用git commit 提交代码的话，可以使用commitlint 对commit提交信息有效性进行校验
+
+安装
+```js
+  npm i --save-dev @commitlint/cli @commitlint/config-angular
+```
+安装完插件之后，命令行中运行,生成commitlint.config.js配置文件，或者直接自己创建一个也OK
+```js
+echo "module.exports = {extends: ['@commitlint/config-conventional']}"
+```
+更多commitlint.config.js配置信息参考： 
+https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-angular
+配置git hooks信息： 
+```js 
+  npm i --save-dev husky
+  npx husky i
+  npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
+```
+在 package.json中配置： 
+```js
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+```
+实现git commit 提交的时候就OK了
+```js
+➜  ChangeLog git:(main) ✗ git commit -m '增加commitlint'                                                          
+⧗   input: 增加commitlint
+✖   subject may not be empty [subject-empty]
+✖   type may not be empty [type-empty]
+
+✖   found 2 problems, 0 warnings
+ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+
+husky - commit-msg hook exited with code 1 (error)
+```
+
