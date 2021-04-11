@@ -114,6 +114,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}"
 ```
 更多commitlint.config.js配置信息参考： 
 https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-angular
+
 配置git hooks信息： 
 ```js 
   npm i --save-dev husky
